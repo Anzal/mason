@@ -1,4 +1,4 @@
-package riftland;
+package sim.app.geo.riftland;
 
 import ec.util.Parameter;
 import ec.util.ParameterDatabase;

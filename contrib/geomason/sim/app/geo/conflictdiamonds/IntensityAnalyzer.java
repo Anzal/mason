@@ -1,12 +1,12 @@
-package conflictdiamonds;
+package sim.app.geo.conflictdiamonds;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 import sim.util.Bag;
 
-import conflictdiamonds.ConflictDiamonds.Goal;
-import conflictdiamonds.ConflictDiamonds.Motive;
+import sim.app.geo.conflictdiamonds.ConflictDiamonds.Goal;
+import sim.app.geo.conflictdiamonds.ConflictDiamonds.Motive;
 
 /**
  * The Intensity Analyzer determines which motivation is strongest, and thus the action-guiding motive

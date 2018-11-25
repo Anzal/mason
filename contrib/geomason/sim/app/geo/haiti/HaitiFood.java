@@ -1,4 +1,6 @@
-package haiti;
+package sim.app.geo.haiti;
+
+import haiti.haitiData.*;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -76,8 +78,8 @@ public class HaitiFood extends SimState {
 	
 	// Relief File Settings ///
 	String reliefFile = null;
-	String [] reliefFiles = new String [] {"haitiData/relief1.txt", "haitiData/reliefBETTA.txt", 
-			"haitiData/reliefOKBETTA.txt", "haitiData/reliefBAD.txt", "haitiData/reliefSingle.txt"};
+	String [] reliefFiles = new String [] {"/haiti/haitiData/relief1.txt", "/haiti/haitiData/reliefBETTA.txt",
+			"/haiti/haitiData/reliefOKBETTA.txt", "/haiti/haitiData/reliefBAD.txt", "/haiti/haitiData/reliefSingle.txt"};
 	String [] reliefFilesNames = new String [] {"Neutral", "Good", "Better", "Bad", "Single"};
 	
 	// making the Relief file modifiable
@@ -90,12 +92,12 @@ public class HaitiFood extends SimState {
 	public HaitiFood(long seed) {
 		super(seed);
 		
-		roadsFile = "haitiData/roads1.txt";
-		roadVectorFile ="haitiRoads/Haiti_all_roads_Clip.shp";
-		destructionFile ="haitiData/destruction.txt";
+		roadsFile = "/haiti/haitiData/roads1.txt";
+		roadVectorFile ="/haiti/haitiData/Haiti_all_roads_Clip.shp";
+		destructionFile ="/haiti/haitiData/destruction.txt";
 		if(reliefFile == null)
-			reliefFile ="haitiData/relief1.txt";
-		popFile ="haitiData/pop.txt";
+			reliefFile ="/haiti/haitiData/relief1.txt";
+		popFile ="/haiti/haitiData/pop.txt";
 
 	}
 
@@ -114,10 +116,10 @@ public class HaitiFood extends SimState {
 		this.enRiot = enRiot;
 		this.interval = interval;
 
-		roadsFile = "haitiData/roads1.txt";
-		roadVectorFile = "haitiRoads/Haiti_all_roads_Clip.shp";
-		destructionFile = "haitiData/destruction.txt"; 
-		popFile = "haitiData/pop.txt";
+		roadsFile = "/haiti/haitiData/roads1.txt";
+		roadVectorFile = "/haiti/haitiData/Haiti_all_roads_Clip.shp";
+		destructionFile = "/haiti/haitiData/destruction.txt";
+		popFile = "/haiti/haitiData/pop.txt";
 		if (reliefFile == null)
 			reliefFile = reliefFiles[0]; // pick the default
 	}
@@ -180,6 +182,8 @@ public class HaitiFood extends SimState {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}catch(MalformedURLException e){
+			e.printStackTrace();
+		} catch(Exception e){
 			e.printStackTrace();
 		}
 
@@ -406,11 +410,14 @@ public class HaitiFood extends SimState {
 		try { // to read in a file
 
 			// Open the file
-			FileInputStream fstream = new FileInputStream(filename);
+			//FileInputStream fstream = new FileInputStream(filename);
+
+			BufferedReader d = new BufferedReader(new InputStreamReader(haiti.haitiData.HaitiData.class.getResourceAsStream
+					(filename)));
 
 			// Convert our input stream to a BufferedReader
-			BufferedReader d = new BufferedReader(
-					new InputStreamReader(fstream));
+			//BufferedReader d = new BufferedReader(
+			//		new InputStreamReader(fstream));
 
 			// get the parameters from the file
 			String s;

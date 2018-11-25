@@ -1,4 +1,4 @@
-package cityMigration;
+package sim.app.geo.cityMigration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import masoncsc.datawatcher.DataWatcher;
 import masoncsc.datawatcher.FileDataWriter;
 import masoncsc.datawatcher.ListDataWatcher;
-import riftland.PopulationCenter;
+import sim.app.geo.riftland.PopulationCenter;
 import sim.engine.SimState;
 import sim.engine.Steppable;
 

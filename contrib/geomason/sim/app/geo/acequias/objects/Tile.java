@@ -1,4 +1,4 @@
-package objects;
+package sim.app.geo.acequias.objects;
 
 /**  <b>Tile</b> the patches of landscape which make up the environment.
  * 
@@ -6,6 +6,7 @@ package objects;
  * 
  * @author Sarah Wise and Andrew Crooks
  */
+
 public class Tile {
 	
 	// --- ATTRIBUTES ---

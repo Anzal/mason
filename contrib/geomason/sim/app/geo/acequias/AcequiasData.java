@@ -1,3 +1,6 @@
-package acequias.acequiasData;
-public class AcequiasData{}
+package sim.app.geo.acequias;
+
+public class AcequiasData
+	{
+	}
 

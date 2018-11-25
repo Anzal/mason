@@ -1,9 +1,8 @@
-package objects;
+package sim.app.geo.acequias.objects;
 
 import java.util.ArrayList;
 
-import AcequiaWorld;
-import WaterSystem;
+import sim.app.geo.acequias.*;
 
 import sim.field.grid.ObjectGrid2D;
 import sim.field.network.Edge;

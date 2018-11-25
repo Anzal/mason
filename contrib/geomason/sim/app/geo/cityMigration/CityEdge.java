@@ -1,6 +1,6 @@
-package cityMigration;
+package sim.app.geo.cityMigration;
 
-import riftland.PopulationCenter;
+import sim.app.geo.riftland.PopulationCenter;
 
 import java.net.URL;
 

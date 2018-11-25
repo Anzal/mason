@@ -1,5 +1,6 @@
-package acequias;
+package sim.app.geo.acequias;
 
+import acequias.acequiasData.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -7,12 +8,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import acequias.objects.Acequia;
-import acequias.objects.Parciante;
-import acequias.objects.Tile;
-//import acequias.
-//import acequias.acequiasData;
-//import acequias.acequiasData.AcequiasData;
+import sim.app.geo.acequias.objects.*;
+
 import sim.engine.SimState;
 import sim.field.grid.ObjectGrid2D;
 import sim.field.network.Edge;
@@ -128,28 +125,28 @@ public class AcequiaWorld extends SimState {
 
 		// read in the data
 		System.err.println("read in elevations");
-		setupDoubleFromFile("/acequias/acequiaData/ned.txt", 1);
+		setupDoubleFromFile("/acequias/acequiasData/ned.txt", 1);
 
 		System.err.println("read in land use");
-		setupIntFromFile("/acequias/acequiaData/landuse.txt", 3);
+		setupIntFromFile("/acequias/acequiasData/landuse.txt", 3);
 
 		System.err.println("read in hydrology");
-		setupIntFromFile("/acequias/acequiaData/hydrology.txt", 1);
+		setupIntFromFile("/acequias/acequiasData/hydrology.txt", 1);
 		
 		System.err.println("read in acequia tracts");
-		setupIntFromFile("/acequias/acequiaData/acequiatracts.txt", 2);
+		setupIntFromFile("/acequias/acequiasData/acequiatracts.txt", 2);
 
 		System.err.println("read in acequias");
-		setupIntFromFile("/acequias/acequiaData/acequias.txt", 4);
+		setupIntFromFile("/acequias/acequiasData/acequias.txt", 4);
 		
 		System.err.println("read in roads");
-		setupIntFromFile("/acequias/acequiaData/roads.txt", 5);
+		setupIntFromFile("/acequias/acequiasData/roads.txt", 5);
 
 		System.err.println("read in counties");
-		setupIntFromFile("/acequias/acequiaData/counties.txt", 6);
+		setupIntFromFile("/acequias/acequiasData/counties.txt", 6);
 
 		System.err.println("read in city center");
-		setupIntFromFile("/acequias/acequiaData/citycenter.txt", 7);
+		setupIntFromFile("/acequias/acequiasData/citycenter.txt", 7);
 
 		// finished reading in the data
 		

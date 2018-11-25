@@ -1,4 +1,4 @@
-package kibera;
+package sim.app.geo.kibera;
 
 import java.io.*;
 import java.net.URL;
@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import kibera.Resident.Employment;
-import kibera.Resident.Gender;
-import kibera.Resident.Identity;
-import kibera.Resident.Religion;
+import sim.app.geo.kibera.Resident.Employment;
+import sim.app.geo.kibera.Resident.Gender;
+import sim.app.geo.kibera.Resident.Identity;
+import sim.app.geo.kibera.Resident.Religion;
 
 import com.vividsolutions.jts.geom.CoordinateSequence;
 import com.vividsolutions.jts.geom.Envelope;
@@ -1488,9 +1488,26 @@ public class KiberaBuilder extends Stats {
             //Import road shapefile
             Bag roadImporter = new Bag();
             roadImporter.add("Type");
+
                
-            File file=new File("data/Road_Export.shp");
+            //File file=new File("/data/Road_Export.shp");
+            //URL roadShapeUL = file.toURL();
+
+            /* My Code
+            InputStream input = kibera.kiberaData.KiberaData.class.getResourceAsStream("/kibera/kiberaData/Road_Export.shp");
+            File file = File.createTempFile("tempfile", ".tmp");
+            OutputStream out = new FileOutputStream(file);
+            int read;
+            byte[] bytes = new byte[1024];
+
+            while ((read = input.read(bytes)) != -1) {
+                    out.write(bytes, 0, read);
+            }
+            file.deleteOnExit();
+            My Code */
+
             URL roadShapeUL = file.toURL();
+            System.out.println(roadShapeUL+" this is it ");
                
             ShapeFileImporter.read(roadShapeUL, kibera.roadLinks, roadImporter);
                
@@ -1503,6 +1520,9 @@ public class KiberaBuilder extends Stats {
 		catch (IOException ex) {
 			Logger.getLogger(KiberaBuilder.class.getName()).log(Level.SEVERE, null, ex);
 		}
+		catch (Exception e){
+            Logger.getLogger(KiberaBuilder.class.getName()).log(Level.SEVERE, null, e);
+        }
 	}
 	
 	///  raod network methods from haiti project

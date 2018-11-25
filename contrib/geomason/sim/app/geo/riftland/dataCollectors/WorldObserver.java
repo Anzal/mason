@@ -6,9 +6,9 @@
 
 package riftland.dataCollectors;
 
-import riftland.World;
-import riftland.conflict.Mediator;
-import cityMigration.DisplacementEvent;
+import sim.app.geo.riftland.World;
+import sim.app.geo.riftland.conflict.Mediator;
+import sim.app.geo.cityMigration.DisplacementEvent;
 import net.sf.csv4j.CSVWriter;
 import sim.engine.SimState;
 import sim.engine.Steppable;

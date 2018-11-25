@@ -1,4 +1,4 @@
-package hotspots.sim;
+package sim.app.geo.hotspots.sim;
 
 import java.io.*;
 import java.net.URL;
@@ -25,7 +25,7 @@ import sim.util.geo.AttributeValue;
 import sim.util.geo.GeomPlanarGraph;
 import sim.util.geo.MasonGeometry;
 import sim.util.geo.PointMoveTo;
-import hotspots.objects.Agent;
+import sim.app.geo.hotspots.objects.Agent;
 
 import swise.agents.communicator.Communicator;
 import swise.agents.communicator.Information;
@@ -902,7 +902,8 @@ public class Hotspots extends SimState {
 		try {
 				
 				System.out.print("Reading in " + layerDescription + "from " + filename + "...");
-				FileInputStream fstream = new FileInputStream(filename);
+				//FileInputStream fstream = new FileInputStream(filename);
+				FileInputStream fstream = new FileInputStream(new InputStream(hotspots.hotspotsData.HotSpotsData.class.getResourceAsStream(filename)));
 				ArcInfoASCGridImporter.read(fstream, type, layer);
 				fstream.close();
 				System.out.println("done");

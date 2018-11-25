@@ -1,9 +1,9 @@
-package conflictdiamonds;
+package sim.app.geo.conflictdiamonds;
 
 import java.util.ArrayList;
 import java.util.Random;
-import conflictdiamonds.ConflictDiamonds.Goal;
-import conflictdiamonds.ConflictDiamonds.Action;
+import sim.app.geo.conflictdiamonds.ConflictDiamonds.Goal;
+import sim.app.geo.conflictdiamonds.ConflictDiamonds.Action;
 import sim.engine.Stoppable;
 import sim.util.*;
 
